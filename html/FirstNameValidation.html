@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>First Name Validation</title>
+</head>
+<body>
+  <h2>First Name Validation</h2>
+
+  <label>First Name:</label>
+  <input type="text" id="firstName" required>
+  <button onclick="validateFirstName()">Validate First Name</button>
+  <p id="error1"></p>
+
+  <script>
+    function validateFirstName() {
+      const firstName = document.getElementById("firstName").value;
+      const nameRegex = /^[A-Z][a-zA-Z]{2,}$/;
+
+      if (!nameRegex.test(firstName)) {
+        document.getElementById("error1").innerText = "Invalid First Name (Start with capital, min 3 characters)";
+      } else {
+        document.getElementById("error1").innerText = "Valid First Name ";
+      }
+    }
+  </script>
+</body>
+</html>
